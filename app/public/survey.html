@@ -194,30 +194,16 @@
 </body>
 
 </html>
-<script>
+<script type="text/javascript">
   //alert("this works.")
-  $(document).ready(function () {
-    $("#submitButton").on("click", function () {
+  $document.ready(function(){
+    $("select").material_select();
+    $(".modal").modal();
+  });
 
-      function formNew() {
-
-        var formComp = true;
-        $(".form-control").each(function () {
-          if ($(this).val() === "") {
-            formComp = false;
-          }
-        });
-        $(".select").each(function () {
-          if ($(this).val() === "") {
-            formComp = false;
-          }
-        });
-        return formComp;
-      }
-
-      if (newForm() == true) {
-
-        var userObject = {
+  $("#submit-button").on("click", function (event){
+    event.preventDefault();
+    var userObject = {
           name: $("#fname").val().trim(),
           userPix: $("#photo").val().trim(),
           score: [
@@ -233,35 +219,12 @@
             $("question10").val(),
           ]
         };
-
-        var currentURL = window.location.origin;
-
-        $.post(currentURL + "/api/friends", userObject, function (data) {
-
-          $("#match").text(data.name);
-          $("#matchImage").attr("src", data.photo);
-          $("#modal").modal("toggle");
-        });
-
-        $('#fName').val("");
-        $('#photo').val("");
-        answer1 = $("question1").val();
-        answer2 = $("question2").val();
-        answer3 = $("question3").val();
-        answer4 = $("question4").val();
-        answer5 = $("question5").val();
-        answer6 = $("question6").val();
-        answer7 = $("question7").val();
-        answer8 = $("question8").val();
-        answer9 = $("question9").val();
-        answer10 = $("question10").val();
-
-      } else {
-        alert("Please complete all fields. Thank you.")
-      }
-
-    });
-  });
+      $.post("/api/friends", userObject)
+      .done(function(data){
+        $("match").html(data.nameMatch);
+        $("#matchImage").attr("src", data.imageMatch);
+      })
+  })
 
 
 </script>
