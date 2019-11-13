@@ -7,6 +7,8 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   
 </head>
 <body>
@@ -28,7 +30,7 @@
       <br>
       <h3 style="color: blue;">Questions</h3>
       <div class="form-group">
-        <h5><label for="question1">You prefer crocheting over knitting.</label></h5>
+        <h5><label for="question1">1. You prefer crocheting over knitting.</label></h5>
           <p style="width: 220px;">
             <select class="form-control" id="question1">
               <option value="empty">Select a Value</option>
@@ -42,7 +44,7 @@
             
       </div>
       <div class="form-group">
-          <h5><label for="question2">Your vacation plans always include doing a yarn crawl of the local yarn stores.</label></h5>
+          <h5><label for="question2">2. Your vacation plans always include doing a yarn crawl of the local yarn stores.</label></h5>
           <p style="width: 220px;">
               <select class="form-control" id="question2">
                 <option value="empty">Select a Value</option>
@@ -55,7 +57,7 @@
             </p> 
       </div>
       <div class="form-group">
-          <h5><label for="question3">You refuse to buy hats and scarves because you can make your own.</label></h5>
+          <h5><label for="question3">3. You refuse to buy hats and scarves because you can make your own.</label></h5>
           <p style="width: 220px;">
               <select class="form-control" id="question3">
                 <option value="empty">Select a Value</option>
@@ -68,7 +70,7 @@
             </p> 
       </div>
       <div class="form-group">
-          <h5><label for="question4">You think a craft store is useless if it doesn't carry yarn.</label></h5>
+          <h5><label for="question4">4. You think a craft store is useless if it doesn't carry yarn.</label></h5>
           <p style="width: 220px;">
               <select class="form-control" id="question4">
                 <option value="empty">Select a Value</option>
@@ -81,7 +83,7 @@
             </p> 
       </div>
       <div class="form-group">
-          <h5><label for="question5">When your budget is tight, you'll spend your lunch money on yarn instead of food.</label></h5>
+          <h5><label for="question5">5. When your budget is tight, you'll spend your lunch money on yarn instead of food.</label></h5>
           <p style="width: 220px;">
               <select class="form-control" id="question5">
                 <option value="empty">Select a Value</option>
@@ -94,7 +96,7 @@
             </p> 
       </div>
       <div class="form-group">
-          <h5><label for="question6">You get irritated when someone refers to crocheting as knitting or vice versa.</label></h5>
+          <h5><label for="question6">6. You get irritated when someone refers to crocheting as knitting or vice versa.</label></h5>
           <p style="width: 220px;">
               <select class="form-control" id="question6">
                 <option value="empty">Select a Value</option>
@@ -107,7 +109,7 @@
             </p> 
       </div>
       <div class="form-group">
-          <h5><label for="question7">A great night in includes binge watching your favorite show while working on crochet or knit project.</label></h5>
+          <h5><label for="question7">7. A great night in includes binge watching your favorite show while working on crochet or knit project.</label></h5>
           <p style="width: 220px;">
               <select class="form-control" id="question7">
                 <option value="empty">Select a Value</option>
@@ -120,7 +122,7 @@
             </p> 
       </div>
       <div class="form-group">
-          <h5><label for="question8">Friends and family would categorize you as a yarn hoarder.</label></h5>
+          <h5><label for="question8">8. Friends and family would categorize you as a yarn hoarder.</label></h5>
           <p style="width: 220px;">
               <select class="form-control" id="question8">
                 <option value="empty">Select a Value</option>
@@ -133,7 +135,7 @@
             </p> 
       </div>
       <div class="form-group">
-          <h5><label for="question9">You carry a crochet or knit project with you everywhere you go.</label></h5>
+          <h5><label for="question9">9. You carry a crochet or knit project with you everywhere you go.</label></h5>
           <p style="width: 220px;">
               <select class="form-control" id="question9">
                 <option value="empty">Select a Value</option>
@@ -146,7 +148,7 @@
             </p> 
       </div>
       <div class="form-group">
-          <h5><label for="question10">You neglect chores to work on a new crochet or knitting project.</label></h5>
+          <h5><label for="question10">10. You neglect chores to work on a new crochet or knitting project.</label></h5>
           <p style="width: 220px;">
               <select class="form-control" id="question10">
                 <option value="empty">Select a Value</option>
@@ -168,40 +170,90 @@
         <p><a href="/api/friends">API Friends Link</a> | <a href="https://github.com/tatahall/FriendFinder">Github Repo Link</a> | <a href="/home">Home</a>
       </div>
     </footer>
-
   </div>
+<div id="modal" class="modal">
+  <div class="mcontent">
+<h4>Closest Friend Match</h4>
+<div></div>
+<h5 id="match"></h5>
+<img id="matchImage" class="boxed" width="500" src="" alt="">
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</div>
 
-  <script src="https://code.jquery.com/jquery.js"></script>
-  
-  <script>
-    //alert("this works.")
-    $(document).on("click", "#submit-button", function(){
-      event.preventDefault();
-
-      
-        var userObject = {
-        userName = $("#fname").val(),
-        userPix = $("#photo").val(),
-        scores = [
-        answer1 = $("#question1").val(),
-        answer2 = $("#question2").val(),
-        answer3 = $("#question3").val(),
-        answer4 = $("#question4").val(),
-        answer5 = $("#question5").val(),
-        answer6 = $("#question6").val(),
-        answer7 = $("#question7").val(),
-        answer8 = $("#question8").val(),
-        answer9 = $("#question9").val(),
-        answer10 = $("#question10").val()
-        ]
-        //add the rest of the values
-      }
-      console.log(userObject);
-      $.post("/api/friends", userObject, function(data){
-        console.log(data);
-      })
-
-    })
-  </script>
+   
 </body>
 </html>
+  <script>
+    //alert("this works.")
+$(document).ready(function() {
+    $("#submitButton").on("click", function() {
+         
+        function formNew() {
+            
+            var formComp = true;
+            $(".form-control").each(function() {
+                if ($(this).val() === ""){
+                    formComp = false;
+                }
+            });
+            $(".select").each(function() {
+                if ($(this).val() === ""){
+                   formComp = false;
+                }
+            });
+            return formComp;
+        }
+         
+        if (newForm() == true) {
+             
+            var userObject = {
+              name = $("#fname").val().trim(),
+              userPix = $("#photo").val().trim(),
+              score = [
+                answer1 = $("question1").val(),
+                answer2 = $("question2").val(),
+                answer3 = $("question3").val(),
+                answer4 = $("question4").val(),
+                answer5 = $("question5").val(),
+                answer6 = $("question6").val(),
+                answer7 = $("question7").val(),
+                answer8 = $("question8").val(),
+                answer9 = $("question9").val(),
+                answer10 = $("question10").val(),
+              ] 
+            };
+             
+            var currentURL = window.location.origin;
+             
+            $.post(currentURL + "/api/friends", userObject, function(data) {
+                
+                $("#match").text(data.name);
+                $("#matchImage").attr("src", data.photo);
+                $("#modal").modal("toggle");
+            });
+            
+            $('#fName').val("");
+            $('#photo').val("");
+            answer1 = $("question1").val();
+                answer2 = $("question2").val();
+                answer3 = $("question3").val();
+                answer4 = $("question4").val();
+                answer5 = $("question5").val();
+                answer6 = $("question6").val();
+                answer7 = $("question7").val();
+                answer8 = $("question8").val();
+                answer9 = $("question9").val();
+                answer10 = $("question10").val();
+           
+        } else {
+            alert("Please complete all fields. Thank you.")
+        }
+        
+    });
+});
+   
+     
+  </script>
