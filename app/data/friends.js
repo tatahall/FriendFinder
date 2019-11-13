@@ -1,4 +1,3 @@
-
 var friendsArray = [
     {
         name: "All Handmade",
