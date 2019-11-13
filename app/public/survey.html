@@ -141,7 +141,8 @@
       </p>
     </div>
     <div class="form-group">
-      <h5><label for="question9">9. You're going on vacation and you'll pack extra yarn before packing extra clothes.</label></h5>
+      <h5><label for="question9">9. You're going on vacation and you'll pack extra yarn before packing extra
+          clothes.</label></h5>
       <p style="width: 220px;">
         <select class="form-control" id="question9">
           <option value="empty">Select a Value</option>
@@ -196,35 +197,33 @@
 </html>
 <script type="text/javascript">
   //alert("this works.")
-  $(document).ready(function(){
-    //$("select").material_select();
-    $(".modal").modal();
-  });
-
-  $("#submit-button").on("click", function (event){
-    event.preventDefault();
-    var userObject = {
-          name: $("#fname").val().trim(),
-          userPix: $("#photo").val().trim(),
-          score: [
-            $("question1").val(),
-            $("question2").val(),
-            $("question3").val(),
-            $("question4").val(),
-            $("question5").val(),
-            $("question6").val(),
-            $("question7").val(),
-            $("question8").val(),
-            $("question9").val(),
-            $("question10").val(),
-          ]
-        };
+  $(document).ready(function () {
+    $("#submit-button").on("click", function (event) {
+      event.preventDefault();
+      var userObject = {
+        name: $("#fname").val().trim(),
+        userPix: $("#photo").val().trim(),
+        score: [
+          $("question1").val(),
+          $("question2").val(),
+          $("question3").val(),
+          $("question4").val(),
+          $("question5").val(),
+          $("question6").val(),
+          $("question7").val(),
+          $("question8").val(),
+          $("question9").val(),
+          $("question10").val(),
+        ]
+      };
       $.post("/api/friends", userObject)
-      .done(function(data){
-        $("match").html(data.nameMatch);
-        $("#matchImage").attr("src", data.imageMatch);
-      })
-  })
+        .done(function (data) {
+          $("#match").html(data.nameMatch);
+          $("#matchImage").attr("src", data.imageMatch);
+          $("#modal").modal("toggle");
+        })
+    })
+  });
 
 
 </script>
