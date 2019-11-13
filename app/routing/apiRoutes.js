@@ -1,5 +1,7 @@
+var path = require("path");
+
 //linking routes to data source
-var friends = require("../data/friends");
+var friends = require("../data/friends.js");
 
 //exporting data 
 module.exports = function(app) {
@@ -17,17 +19,17 @@ module.exports = function(app) {
 
          //variable for the users input to survey
          var userObject = req.body;
-         var userScore = userObject.score;
-
-          var nameMatch = "";
-          var imageMatch = "";
-
-          var totDiff = 50;
-
-          //want to loop through the friends in the data file
-          for(var i = 0; i <friends.length; i++){
-            var diff = 0;
-            //determine difference for each question
+         
+         var nameMatch = "";
+         var imageMatch = "";
+         
+         var totDiff = 50;
+         
+         //want to loop through the friends in the data file
+         for(var i = 0; i < friends.length; i++){
+           var diff = 0;
+           //determine difference for each question
+           var userScore = userObject.score;
             for (var j = 0; j < userScore.length; j++){
               diff += Math.abs(friends[i].score[j] - userScore[j]);
             }
