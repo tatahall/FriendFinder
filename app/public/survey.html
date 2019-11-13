@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>FriendFinder Home Page</title>
@@ -9,251 +10,258 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  
+
 </head>
+
 <body>
 
   <div class="container">
 
-      <h1 style="color: blue;"><span class="fa fa-facebook-square"></span> Friend Finder Survey Questions</h1>
-      <hr>
-      <br>
-      <h3 style="color: blue;"><strong>About You</strong></h3>
-      <br>
-      <h4>Name (Required)</h4>
-      <input type="text" id="fname" class="form-control" required>
-      <br>
-      <h4>Link to Photo Image (Required)</h4>
-      <input type="text" id="photo" class="form-control" required>
-      <br>
-      <hr>
-      <br>
-      <h3 style="color: blue;">Questions</h3>
-      <div class="form-group">
-        <h5><label for="question1">1. You prefer crocheting over knitting.</label></h5>
-          <p style="width: 220px;">
-            <select class="form-control" id="question1">
-              <option value="empty">Select a Value</option>
-              <option value="1">1 -- Strongly Disagree</option>
-              <option value="2">2 -- Disagree</option>
-              <option value="3">3 -- Neutral</option>
-              <option value="4">4 -- Agree</option>
-              <option value="5">5 -- Strongly Agree</option>
-            </select>
-          </p> 
-            
-      </div>
-      <div class="form-group">
-          <h5><label for="question2">2. Your vacation plans always include doing a yarn crawl of the local yarn stores.</label></h5>
-          <p style="width: 220px;">
-              <select class="form-control" id="question2">
-                <option value="empty">Select a Value</option>
-                <option value="1">1 -- Strongly Disagree</option>
-                <option value="2">2 -- Disagree</option>
-                <option value="3">3 -- Neutral</option>
-                <option value="4">4 -- Agree</option>
-                <option value="5">5 -- Strongly Agree</option>
-              </select>
-            </p> 
-      </div>
-      <div class="form-group">
-          <h5><label for="question3">3. You refuse to buy hats and scarves because you can make your own.</label></h5>
-          <p style="width: 220px;">
-              <select class="form-control" id="question3">
-                <option value="empty">Select a Value</option>
-                <option value="1">1 -- Strongly Disagree</option>
-                <option value="2">2 -- Disagree</option>
-                <option value="3">3 -- Neutral</option>
-                <option value="4">4 -- Agree</option>
-                <option value="5">5 -- Strongly Agree</option>
-              </select>
-            </p> 
-      </div>
-      <div class="form-group">
-          <h5><label for="question4">4. You think a craft store is useless if it doesn't carry yarn.</label></h5>
-          <p style="width: 220px;">
-              <select class="form-control" id="question4">
-                <option value="empty">Select a Value</option>
-                <option value="1">1 -- Strongly Disagree</option>
-                <option value="2">2 -- Disagree</option>
-                <option value="3">3 -- Neutral</option>
-                <option value="4">4 -- Agree</option>
-                <option value="5">5 -- Strongly Agree</option>
-              </select>
-            </p> 
-      </div>
-      <div class="form-group">
-          <h5><label for="question5">5. When your budget is tight, you'll spend your lunch money on yarn instead of food.</label></h5>
-          <p style="width: 220px;">
-              <select class="form-control" id="question5">
-                <option value="empty">Select a Value</option>
-                <option value="1">1 -- Strongly Disagree</option>
-                <option value="2">2 -- Disagree</option>
-                <option value="3">3 -- Neutral</option>
-                <option value="4">4 -- Agree</option>
-                <option value="5">5 -- Strongly Agree</option>
-              </select>
-            </p> 
-      </div>
-      <div class="form-group">
-          <h5><label for="question6">6. You get irritated when someone refers to crocheting as knitting or vice versa.</label></h5>
-          <p style="width: 220px;">
-              <select class="form-control" id="question6">
-                <option value="empty">Select a Value</option>
-                <option value="1">1 -- Strongly Disagree</option>
-                <option value="2">2 -- Disagree</option>
-                <option value="3">3 -- Neutral</option>
-                <option value="4">4 -- Agree</option>
-                <option value="5">5 -- Strongly Agree</option>
-              </select>
-            </p> 
-      </div>
-      <div class="form-group">
-          <h5><label for="question7">7. A great night in includes binge watching your favorite show while working on crochet or knit project.</label></h5>
-          <p style="width: 220px;">
-              <select class="form-control" id="question7">
-                <option value="empty">Select a Value</option>
-                <option value="1">1 -- Strongly Disagree</option>
-                <option value="2">2 -- Disagree</option>
-                <option value="3">3 -- Neutral</option>
-                <option value="4">4 -- Agree</option>
-                <option value="5">5 -- Strongly Agree</option>
-              </select>
-            </p> 
-      </div>
-      <div class="form-group">
-          <h5><label for="question8">8. Friends and family would categorize you as a yarn hoarder.</label></h5>
-          <p style="width: 220px;">
-              <select class="form-control" id="question8">
-                <option value="empty">Select a Value</option>
-                <option value="1">1 -- Strongly Disagree</option>
-                <option value="2">2 -- Disagree</option>
-                <option value="3">3 -- Neutral</option>
-                <option value="4">4 -- Agree</option>
-                <option value="5">5 -- Strongly Agree</option>
-              </select>
-            </p> 
-      </div>
-      <div class="form-group">
-          <h5><label for="question9">9. You carry a crochet or knit project with you everywhere you go.</label></h5>
-          <p style="width: 220px;">
-              <select class="form-control" id="question9">
-                <option value="empty">Select a Value</option>
-                <option value="1">1 -- Strongly Disagree</option>
-                <option value="2">2 -- Disagree</option>
-                <option value="3">3 -- Neutral</option>
-                <option value="4">4 -- Agree</option>
-                <option value="5">5 -- Strongly Agree</option>
-              </select>
-            </p> 
-      </div>
-      <div class="form-group">
-          <h5><label for="question10">10. You neglect chores to work on a new crochet or knitting project.</label></h5>
-          <p style="width: 220px;">
-              <select class="form-control" id="question10">
-                <option value="empty">Select a Value</option>
-                <option value="1">1 -- Strongly Disagree</option>
-                <option value="2">2 -- Disagree</option>
-                <option value="3">3 -- Neutral</option>
-                <option value="4">4 -- Agree</option>
-                <option value="5">5 -- Strongly Agree</option>
-              </select>
-            </p> 
-      </div>
-      <br>
-      <div>
-        <button id="submit-button" type="submit" button class="btn btn-lg btn-primary">Submit</button>
-      </div>
-      <br><br>
+    <h1 style="color: blue;"><span class="fa fa-facebook-square"></span> Friend Finder Survey Questions</h1>
+    <hr>
+    <br>
+    <h3 style="color: blue;"><strong>About You</strong></h3>
+    <br>
+    <h4>Name (Required)</h4>
+    <input type="text" id="fname" class="form-control" required>
+    <br>
+    <h4>Link to Photo Image (Required)</h4>
+    <input type="text" id="photo" class="form-control" required>
+    <br>
+    <hr>
+    <br>
+    <h3 style="color: blue;">Questions</h3>
+    <div class="form-group">
+      <h5><label for="question1">1. You prefer crocheting over knitting.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question1">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+
+    </div>
+    <div class="form-group">
+      <h5><label for="question2">2. Your vacation plans always include doing a yarn crawl of the local yarn
+          stores.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question2">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+    </div>
+    <div class="form-group">
+      <h5><label for="question3">3. You refuse to buy hats and scarves because you can make your own.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question3">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+    </div>
+    <div class="form-group">
+      <h5><label for="question4">4. You think a craft store is useless if it doesn't carry yarn.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question4">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+    </div>
+    <div class="form-group">
+      <h5><label for="question5">5. When your budget is tight, you'll spend your lunch money on yarn instead of
+          food.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question5">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+    </div>
+    <div class="form-group">
+      <h5><label for="question6">6. You get irritated when someone refers to crocheting as knitting or vice
+          versa.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question6">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+    </div>
+    <div class="form-group">
+      <h5><label for="question7">7. A great night in includes binge watching your favorite show while working on crochet
+          or knit project.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question7">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+    </div>
+    <div class="form-group">
+      <h5><label for="question8">8. Friends and family would categorize you as a yarn hoarder.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question8">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+    </div>
+    <div class="form-group">
+      <h5><label for="question9">9. You carry a crochet or knit project with you everywhere you go.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question9">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+    </div>
+    <div class="form-group">
+      <h5><label for="question10">10. You neglect chores to work on a new crochet or knitting project.</label></h5>
+      <p style="width: 220px;">
+        <select class="form-control" id="question10">
+          <option value="empty">Select a Value</option>
+          <option value="1">1 -- Strongly Disagree</option>
+          <option value="2">2 -- Disagree</option>
+          <option value="3">3 -- Neutral</option>
+          <option value="4">4 -- Agree</option>
+          <option value="5">5 -- Strongly Agree</option>
+        </select>
+      </p>
+    </div>
+    <br>
+    <div>
+      <button id="submit-button" type="submit" button class="btn btn-lg btn-primary">Submit</button>
+    </div>
+    <br><br>
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/friends">API Friends Link</a> | <a href="https://github.com/tatahall/FriendFinder">Github Repo Link</a> | <a href="/home">Home</a>
+        <p><a href="/api/friends">API Friends Link</a> | <a href="https://github.com/tatahall/FriendFinder">Github Repo
+            Link</a> | <a href="/home">Home</a>
       </div>
     </footer>
   </div>
-<div id="modal" class="modal">
-  <div class="mcontent">
-<h4>Closest Friend Match</h4>
-<div></div>
-<h5 id="match"></h5>
-<img id="matchImage" class="boxed" width="500" src="" alt="">
-  </div>
-  <div class="modal-footer">
+  <div id="modal" class="modal">
+    <div class="mcontent">
+      <h4>Closest Friend Match</h4>
+      <div></div>
+      <h5 id="match"></h5>
+      <img id="matchImage" class="boxed" width="500" src="" alt="">
+    </div>
+    <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
-</div>
+  </div>
 
-   
+
 </body>
+
 </html>
-  <script>
-    //alert("this works.")
-$(document).ready(function() {
-    $("#submitButton").on("click", function() {
-         
-        function formNew() {
-            
-            var formComp = true;
-            $(".form-control").each(function() {
-                if ($(this).val() === ""){
-                    formComp = false;
-                }
-            });
-            $(".select").each(function() {
-                if ($(this).val() === ""){
-                   formComp = false;
-                }
-            });
-            return formComp;
-        }
-         
-        if (newForm() == true) {
-             
-            var userObject = {
-              name = $("#fname").val().trim(),
-              userPix = $("#photo").val().trim(),
-              score = [
-                answer1 = $("question1").val(),
-                answer2 = $("question2").val(),
-                answer3 = $("question3").val(),
-                answer4 = $("question4").val(),
-                answer5 = $("question5").val(),
-                answer6 = $("question6").val(),
-                answer7 = $("question7").val(),
-                answer8 = $("question8").val(),
-                answer9 = $("question9").val(),
-                answer10 = $("question10").val(),
-              ] 
-            };
-             
-            var currentURL = window.location.origin;
-             
-            $.post(currentURL + "/api/friends", userObject, function(data) {
-                
-                $("#match").text(data.name);
-                $("#matchImage").attr("src", data.photo);
-                $("#modal").modal("toggle");
-            });
-            
-            $('#fName').val("");
-            $('#photo').val("");
-            answer1 = $("question1").val();
-                answer2 = $("question2").val();
-                answer3 = $("question3").val();
-                answer4 = $("question4").val();
-                answer5 = $("question5").val();
-                answer6 = $("question6").val();
-                answer7 = $("question7").val();
-                answer8 = $("question8").val();
-                answer9 = $("question9").val();
-                answer10 = $("question10").val();
-           
-        } else {
-            alert("Please complete all fields. Thank you.")
-        }
-        
+<script>
+  //alert("this works.")
+  $(document).ready(function () {
+    $("#submitButton").on("click", function () {
+
+      function formNew() {
+
+        var formComp = true;
+        $(".form-control").each(function () {
+          if ($(this).val() === "") {
+            formComp = false;
+          }
+        });
+        $(".select").each(function () {
+          if ($(this).val() === "") {
+            formComp = false;
+          }
+        });
+        return formComp;
+      }
+
+      if (newForm() == true) {
+
+        var userObject = {
+          name: $("#fname").val().trim(),
+          userPix: $("#photo").val().trim(),
+          score: [
+            $("question1").val(),
+            $("question2").val(),
+            $("question3").val(),
+            $("question4").val(),
+            $("question5").val(),
+            $("question6").val(),
+            $("question7").val(),
+            $("question8").val(),
+            $("question9").val(),
+            $("question10").val(),
+          ]
+        };
+
+        var currentURL = window.location.origin;
+
+        $.post(currentURL + "/api/friends", userObject, function (data) {
+
+          $("#match").text(data.name);
+          $("#matchImage").attr("src", data.photo);
+          $("#modal").modal("toggle");
+        });
+
+        $('#fName').val("");
+        $('#photo').val("");
+        answer1 = $("question1").val();
+        answer2 = $("question2").val();
+        answer3 = $("question3").val();
+        answer4 = $("question4").val();
+        answer5 = $("question5").val();
+        answer6 = $("question6").val();
+        answer7 = $("question7").val();
+        answer8 = $("question8").val();
+        answer9 = $("question9").val();
+        answer10 = $("question10").val();
+
+      } else {
+        alert("Please complete all fields. Thank you.")
+      }
+
     });
-});
-   
-     
-  </script>
+  });
+
+
+</script>
