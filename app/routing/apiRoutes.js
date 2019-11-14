@@ -1,46 +1,47 @@
-var path = require("path");
+//var path = require("path");
 
 //linking routes to data source
 var friends = require("../data/friends.js");
 
 //exporting data 
-module.exports = function(app) {
+module.exports = function (app) {
 
-  
-    app.get("/api/friends", function(req, res) {
-      res.json(friends);
-    });
-  
 
-    app.post("/api/friends", function(req, res) {
-        //console.log(req.body);
-        //math logic goes here
-         //build object to send back match
+  app.get("/api/friends", function (req, res) {
+    res.json(friends);
+  });
 
-         //variable for the users input to survey
-         var userObject = req.body;
-         
-         var nameMatch = "";
-         var imageMatch = "";
-         
-         var totDiff = 50;
-         
-         //want to loop through the friends in the data file
-         for(var i = 0; i < friends.length; i++){
-           var diff = 0;
-           //determine difference for each question
-           var userScore = userObject.score;
-            for (var j = 0; j < userScore.length; j++){
-              diff += Math.abs(friends[i].score[j] - userScore[j]);
-            }
-            if (diff < totDiff){
-              totDiff = diff;
-              nameMatch = friends[i].name;
-              imageMatch = friends[i].photo;
-            }
-          }
-          friends.push(userObject);
-          res.json({status: 'OK', nameMatch: nameMatch, imageMatch: imageMatch});
-    });
-  };
-  
+
+  app.post("/api/friends", function (req, res) {
+    //console.log(req.body);
+    //math logic goes here
+    //build object to send back match
+    var userObjectScore = req.body.scores;
+    var scoresArray = [];
+    //var friendCount = 0;
+    var bestChoice = 0;
+
+    //loop through all the friends in the current list on the friends.js file
+    for (var i = 0; i < friends.length; i++) {
+      var diff = 0;
+      //loop through scores to compare user's scores with friends scores
+      for (var j = 0; j < userObjectScore.length; j++) {
+        diff += (Math.abs(parseInt(friends[i].scores[j])) - parseInt(userObjectScore[j]));
+      }
+      //push the difference into the array
+      scoresArray.push(diff);
+    }
+    //loop through the array to find a match
+    for (var i = 0; i < scoresArray.length; i++) {
+      if (scoresArray[i] <= scoresArray[bestChoice]) {
+        bestChoice = i;
+      }
+    }
+    //show match
+    var bestie = friends[bestChoice];
+    res.json(bestie);
+
+    //push into friends array
+    friends.push(req.body);
+  });
+};

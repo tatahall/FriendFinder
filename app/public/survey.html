@@ -218,8 +218,8 @@
       };
       $.post("/api/friends", userObject)
         .done(function (data) {
-          $("#match").html(data.nameMatch);
-          $("#matchImage").attr("src", data.imageMatch);
+          $("#match").html(data.name);
+          $("#matchImage").attr("src", data.photo);
           $("#modal").modal("toggle");
         })
     })
