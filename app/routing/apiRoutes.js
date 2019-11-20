@@ -16,7 +16,9 @@ module.exports = function (app) {
     //console.log(req.body);
     //math logic goes here
     //build object to send back match
-    var userObjectScore = req.body.scores;
+    var userObject = req.body;
+    var userScore = userObject.scores;
+    console.log(userScore);
     var scoresArray = [];
     //var friendCount = 0;
     var bestChoice = 0;
@@ -25,8 +27,8 @@ module.exports = function (app) {
     for (var i = 0; i < friends.length; i++) {
       var diff = 0;
       //loop through scores to compare user's scores with friends scores
-      for (var j = 0; j < userObjectScore.length; j++) {
-        diff += (Math.abs(parseInt(friends[i].scores[j])) - parseInt(userObjectScore[j]));
+      for (var j = 0; j < userScore.length; j++) {
+        diff += (Math.abs(parseInt(friends[i].scores[j])) - parseInt(userScore[j]));
       }
       //push the difference into the array
       scoresArray.push(diff);
